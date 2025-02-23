@@ -1,0 +1,33 @@
+# Manifest file for Eureka Deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-stg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eureka-stg
+  template:
+    metadata:
+      labels:
+        app: eureka-stg
+    spec:
+      containers:
+      - name: eureka-stg
+        image: DIT
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eureka-stg-svc
+spec:
+  selector:
+    app: eureka-stg
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8761
