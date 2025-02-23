@@ -1,0 +1,17 @@
+# Values can be mentioned in this file
+
+#            or
+
+
+# Values can be passed at the application level, I am passing at application because data changes based on MS
+
+appName: eureka-prod
+depName: eureka-prod-dep
+svcName: eureka-prod-svc
+nameSpace: prod-aadil-ns
+replicas: 
+  default: 1
+image:
+  name: aadil08/eureka
+  tag: random
+targetPort: 8761
